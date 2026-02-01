@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>春日部ドライヘッドスパ｜上質な休息を</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Reset & Variables --- */
+        :root {
+            --bg-body: #1A1A1A;
+            --bg-section: #242424;
+            --bg-card: #2D2D2D;
+            --text-main: #F2F2F2;
+            --text-sub: #B0B0B0;
+            --accent-gold: #C5A065;
+            --accent-gold-light: #D4AF37;
+            --accent-gold-dark: #8E7348;
+            --white: #FFFFFF;
+            --font-serif: 'Noto Serif JP', serif;
+            --font-sans: 'Noto Sans JP', sans-serif;
+            --max-width: 1000px;
+            --spacing-section: 80px;
+            --spacing-mobile: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+            padding-bottom: 80px; /* Space for sticky bar */
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 1000%; /* Typo fix: 100% */
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Utilities --- */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+        .text-gold { color: var(--accent-gold); }
+        .flex { display: flex; flex-wrap: wrap; }
+        .flex-center { justify-content: center; align-items: center; }
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+
+        /* --- Components --- */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 280px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid var(--accent-gold-light);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--text-sub);
+            color: var(--text-main);
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background-color: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Hero Placeholder Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22600%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20600%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23333%22%2F%3E%3C%2Fsvg%3E'); /* Placeholder */
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            letter-spacing: 0.1em;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: #ddd;
+        }
+
+        .hero-note {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* --- 2. Problems --- */
+        .problems {
+            padding: var(--spacing-section) 0;
+            background-color: var(--bg-body);
+        }
+
+        .problems-box {
+            background-color: var(--bg-section);
+            padding: 3rem;
+            border: 1px solid #444;
+            position: relative;
+        }
+
+        .problems-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+        }
+
+        .problems-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-gold);
+        }
+
+        .problems-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* --- 3. Benefits --- */
+        .benefits {
+            padding: var(--spacing-section) 0;
+            background-color: var(--bg-section);
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .benefit-img {
+            width: 100%;
+            height: 300px;
+            background-color: #333; /* Image Placeholder */
+            position: relative;
+        }
+        
+        .benefit-img::after {
+            content: 'Image';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: #555;
+        }
+
+        .benefit-text p {
+            font-size: 1.05rem;
+            color: var(--text-sub);
+        }
+
+        /* --- 4. Reasons --- */
+        .reasons {
+            padding: var(--spacing-section) 0;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .reason-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .reason-num {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .reason-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .reason-desc {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        /* --- 5. Menu --- */
+        .menu {
+            padding: var(--spacing-section) 0;
+            background-color: var(--bg-section);
+            position: relative;
+        }
+        
+        .menu::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            opacity: 0.3;
+        }
+
+        .menu-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1.5rem;
+        }
+
+        .menu-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.8rem;
+        }
+
+        .menu-name {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+        }
+
+        .menu-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .menu-desc {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        .menu-note {
+            font-size: 0.8rem;
+            text-align: right;
+            color: #666;
+            margin-top: 2rem;
+        }
+
+        /* --- 6. Flow --- */
+        .flow {
+            padding: var(--spacing-section) 0;
+        }
+
+        .flow-steps {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .flow-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+
+        .step-num {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            min-width: 40px;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* --- 7. Reviews --- */
+        .reviews {
+            padding: var(--spacing-section) 0;
+            background-color: var(--bg-section);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background: var(--bg-body);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '“';
+            font-family: serif;
+            font-size: 4rem;
+            color: #333;
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .review-meta {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+        }
+
+        /* --- 8. FAQ --- */
+        .faq {
+            padding: var(--spacing-section) 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid #333;
+            padding: 1.5rem;
+        }
+
+        .faq-q {
+            font-weight: bold;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-q::before { content: 'Q.'; }
+
+        .faq-a {
+            padding-left: 1.5rem;
+            color: var(--text-sub);
+        }
+
+        /* --- 9. Access --- */
+        .access {
+            padding: var(--spacing-section) 0;
+            background-color: var(--bg-section);
+        }
+
+        .access-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .access-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .access-map {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background: #333; /* Map Placeholder */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th, .info-table td {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            text-align: left;
+        }
+
+        .info-table th {
+            width: 100px;
+            color: var(--accent-gold);
+            font-weight: normal;
+        }
+
+        /* --- 10. Footer / Sticky CTA --- */
+        .footer-area {
+            padding: 60px 0 100px; /* Extra bottom padding for sticky bar */
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 15px;
+            border-top: 1px solid var(--accent-gold);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        }
+
+        .sticky-btn {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: var(--white);
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            max-width: 500px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .sticky-sub-btn {
+            display: none; /* Show only on desktop if needed, or keeping simple */
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            .benefit-grid { grid-template-columns: 1fr; }
+            .problems-box { padding: 1.5rem; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. First View -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-badges">
+                <span class="hero-badge">完全予約制</span>
+                <span class="hero-badge">完全個室</span>
+                <span class="hero-badge">男女OK</span>
+                <span class="hero-badge">駅近</span>
+            </div>
+            <h1>仕事帰りの頭と目の重さに。<br>上質なドライヘッドスパを、<br>春日部で</h1>
+            <p class="hero-sub">静かな個室空間で受ける、深い休息の時間。</p>
+            
+            <div class="hero-actions">
+                <a href="#reservation" class="btn">空き状況を見てWeb予約</a>
+                <p class="hero-note">当日予約も空きがあればご案内いたします</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Problems -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">このような状態で、<br>帰宅していませんか</h2>
+            <div class="problems-box">
+                <ul class="problems-list">
+                    <li>夕方になると頭が重く、思考がまとまりにくい</li>
+                    <li>目の疲れが抜けず、首や肩まで張る感じがする</li>
+                    <li>眠りが浅く、朝のすっきり感が少ない</li>
+                    <li>休日は寝て終わり、整える時間が足りない</li>
+                </ul>
+                <p class="text-center" style="margin-top: 2rem; color: var(--text-sub);">
+                    ドライヘッドスパは、髪を濡らさずに受けられるため、<br>仕事帰りの気分転換としても選ばれています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefit-grid">
+                <div class="benefit-img"></div>
+                <div class="benefit-text">
+                    <h2 class="section-title" style="text-align: left;">短時間でも、<br>深く休めた感じを</h2>
+                    <p class="mb-1">
+                        頭皮を丁寧にゆるめ、こわばりやすい側頭部・後頭部・首まわりまで心地よく整えていきます。
+                    </p>
+                    <p>
+                        施術後は、視界が明るく感じたり、頭が軽く感じたり、呼吸がしやすくなるように感じる方もいらっしゃいます。
+                        忙しい日常の中で、「自分に戻る時間」をご提供します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Reasons -->
+    <section class="reasons">
+        <div class="container">
+            <h2 class="section-title">上質さは、<br>細部に宿ると考えています</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-num">01</div>
+                    <h3 class="reason-title">静かな個室設計</h3>
+                    <p class="reason-desc">余計な音や視線が入りにくい空間で、施術に集中できる環境を整えています。心から安らげるひとときを。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-num">02</div>
+                    <h3 class="reason-title">整えるカウンセリング</h3>
+                    <p class="reason-desc">その日の疲れの出方を伺い、触れる強さ・重点部位・施術配分を調整します。あなただけのオーダーメイド施術です。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-num">03</div>
+                    <h3 class="reason-title">清潔感と所作</h3>
+                    <p class="reason-desc">タオルや備品、手指衛生、動線まで含めて、安心して身を預けられる状態を保ちます。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-num">04</div>
+                    <h3 class="reason-title">仕事帰りに通いやすい</h3>
+                    <p class="reason-desc">施術後の身支度スペース完備。駅からのアクセスも良く、遅い時間の受付にも対応しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Menu -->
+    <section class="menu">
+        <div class="container">
+            <h2 class="section-title">Menu</h2>
+            <div class="menu-list">
+                
+                <div class="menu-item">
+                    <div class="menu-head">
+                        <span class="menu-name">クイック</span>
+                        <span class="menu-price">¥----</span>
+                    </div>
+                    <p class="menu-desc">仕事帰りに、まずは一度。短時間でリフレッシュしたい方に。</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-head">
+                        <span class="menu-name">スタンダード</span>
+                        <span class="menu-price">¥----</span>
+                    </div>
+                    <p class="menu-desc">いちばん人気のコース。頭〜首まわりまでバランスよく整えます。</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-head">
+                        <span class="menu-name">ディープ</span>
+                        <span class="menu-price">¥----</span>
+                    </div>
+                    <p class="menu-desc">より丁寧に受けたい日に。深い眠りと休息を求める方へ。</p>
+                </div>
+
+                <p class="text-center" style="margin-top: 3rem;">
+                    初めての方は、スタンダードから選ばれる方が多いです。<br>
+                    迷われた場合は、ご来店後にご相談いただけます。
+                </p>
+                <p class="menu-note">※当店の施術はリラクゼーションを目的としております。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Flow -->
+    <section class="flow">
+        <div class="container">
+            <h2 class="section-title">施術の流れ</h2>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h3>ご来店・カウンセリング</h3>
+                        <p>当日の体調やお疲れの箇所を確認いたします。</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h3>施術</h3>
+                        <p>力加減は随時調整いたします。リラックスしてお過ごしください。</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h3>アフターカウンセリング</h3>
+                        <p>お身体の状態をお伝えし、お会計・身支度となります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <p class="review-text">仕事終わりに寄れるのが助かります。静かな空間で、頭が休まる感じがありました。</p>
+                    <p class="review-meta">50代 男性</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">目の疲れが強い日に選びました。施術後は気持ちがほどけて、よく眠れた気がします。</p>
+                    <p class="review-meta">40代 女性</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">男性でも入りやすい雰囲気でした。強さの確認が丁寧で安心できました。</p>
+                    <p class="review-meta">40代 男性</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">髪は濡れますか？</div>
+                    <div class="faq-a">いいえ、濡らしません。整髪料が多い場合は、軽く整えてからご来店ください。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">着替えは必要ですか？</div>
+                    <div class="faq-a">基本は不要です。首まわりが締まる服の場合は、ゆとりのある服装がおすすめです。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">男性も利用できますか？</div>
+                    <div class="faq-a">はい。男女問わずご利用いただけます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">当日予約はできますか？</div>
+                    <div class="faq-a">空きがあれば可能です。Web予約で空き状況をご確認ください。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Access -->
+    <section class="access">
+        <div class="container">
+            <h2 class="section-title">Access</h2>
+            <div class="access-content">
+                <div class="access-info">
+                    <table class="info-table">
+                        <tr>
+                            <th>最寄り</th>
+                            <td>春日部駅より徒歩◯分</td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td>埼玉県春日部市◯◯-◯◯</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>10:00 〜 22:00（最終受付 21:00）</td>
+                        </tr>
+                        <tr>
+                            <th>お支払い</th>
+                            <td>現金／各種クレジットカード／電子マネー</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="access-map">
+                    Google Map Placeholder
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Sticky CTA (Mobile/Global) -->
+    <div class="sticky-cta">
+        <a href="#reservation" class="sticky-btn">Web予約（空き状況を確認）</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="container">
+            <p>&copy; 2024 Dry Head Spa Kasukabe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

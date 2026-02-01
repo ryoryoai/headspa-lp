@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>春日部のドライヘッドスパサロン｜仕事帰りに整う上質ケア</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0a08;
+      --bg-2: #15110c;
+      --surface: #1b1611;
+      --gold: #c9a55a;
+      --gold-soft: #e0c78a;
+      --gold-deep: #a37a38;
+      --text: #f5f0e6;
+      --muted: #c2b397;
+      --line: rgba(201, 165, 90, 0.28);
+      --shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --placeholder: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23150f0b'/><stop offset='1' stop-color='%232b1b0e'/></linearGradient></defs><rect width='1200' height='800' fill='url(%23g)'/><rect x='48' y='48' width='1104' height='704' rx='28' fill='none' stroke='%23c9a55a' stroke-width='3'/><text x='50%25' y='50%25' fill='%23c9a55a' font-size='48' font-family='serif' text-anchor='middle' dominant-baseline='middle'>PHOTO</text></svg>");
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(201, 165, 90, 0.14), transparent 60%),
+        radial-gradient(900px 480px at 90% 10%, rgba(163, 122, 56, 0.12), transparent 55%),
+        linear-gradient(160deg, #090705 0%, #110d09 50%, #090705 100%);
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+      padding-bottom: 110px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      font-family: "Noto Serif JP", serif;
+      font-weight: 600;
+      margin: 0 0 0.6em;
+      letter-spacing: 0.04em;
+    }
+
+    p {
+      margin: 0 0 1.2em;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 2.5rem));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 64px 0;
+      position: relative;
+    }
+
+    .section.alt {
+      background: rgba(21, 17, 12, 0.85);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--gold-soft);
+      margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+
+    .grid-3 {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(27, 22, 17, 0.95), rgba(17, 13, 10, 0.95));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: -40% 60% auto -30%;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(201, 165, 90, 0.18), transparent 70%);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 18px;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      color: var(--gold-soft);
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d5b167, #a97f3c);
+      color: #1b1208;
+      box-shadow: 0 16px 32px rgba(201, 165, 90, 0.28);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--gold-soft);
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.35);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .photo {
+      background-image: var(--placeholder);
+      background-size: cover;
+      background-position: center;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      min-height: 220px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo.tall {
+      min-height: 320px;
+    }
+
+    .card {
+      background: rgba(22, 17, 12, 0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+    }
+
+    .list-check {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .list-check li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+
+    .list-check li::before {
+      content: "\2726";
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .menu-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-card .tag {
+      font-size: 0.75rem;
+      color: var(--gold-soft);
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold-soft);
+      margin: 10px 0 0;
+    }
+
+    .flow {
+      counter-reset: flow;
+      display: grid;
+      gap: 18px;
+    }
+
+    .flow-step {
+      position: relative;
+      padding-left: 56px;
+    }
+
+    .flow-step::before {
+      counter-increment: flow;
+      content: counter(flow);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-family: "Noto Serif JP", serif;
+    }
+
+    .voice {
+      display: grid;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      background: rgba(16, 12, 9, 0.75);
+    }
+
+    details + details {
+      margin-top: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--gold-soft);
+    }
+
+    summary::marker {
+      color: var(--gold);
+    }
+
+    .access-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+    }
+
+    .cta-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 16px 16px;
+      background: rgba(10, 8, 6, 0.92);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+    }
+
+    .cta-dock .btn {
+      width: 100%;
+    }
+
+    .cta-dock .note {
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: reveal 0.9s ease forwards;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-bottom: 40px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+
+      .cta-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .cta-row .btn {
+        flex: 1 1 180px;
+      }
+
+      .cta-dock {
+        left: auto;
+        right: 24px;
+        bottom: 24px;
+        width: 320px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--line);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="hero" class="section hero">
+      <div class="container grid grid-2">
+        <div class="hero-card reveal" style="animation-delay: 0.05s;">
+          <span class="eyebrow">Kasukabe Dry Head Spa</span>
+          <h1>仕事帰りの頭と目の重さに。上質なドライヘッドスパを、春日部で</h1>
+          <p class="hero-sub">静かな個室空間で受ける、完全予約制のヘッドケア。男女問わず通いやすく、短時間でも深い休息を目指します。</p>
+          <div class="badge-list">
+            <span class="badge">完全予約制</span>
+            <span class="badge">個室</span>
+            <span class="badge">男女OK</span>
+            <span class="badge">最終受付：◯◯時</span>
+            <span class="badge">キャッシュレス対応</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#reserve">空き状況を見てWeb予約</a>
+            <a class="btn btn-secondary" href="tel:000-0000-0000">電話で予約する</a>
+            <a class="btn btn-secondary" href="#reserve">LINEで相談する</a>
+          </div>
+          <p class="note">当日予約も空きがあればご案内いたします。所要時間の目安：施術時間＋カウンセリング約◯分。</p>
+        </div>
+        <div class="photo tall reveal" style="animation-delay: 0.15s;" role="img" aria-label="上質な個室のイメージ"></div>
+      </div>
+    </section>
+
+    <section id="pain" class="section alt">
+      <div class="container grid grid-2">
+        <div class="reveal" style="animation-delay: 0.05s;">
+          <span class="eyebrow">After Work Care</span>
+          <h2>このような状態で、帰宅していませんか</h2>
+          <ul class="list-check">
+            <li>夕方になると頭が重く、思考がまとまりにくい</li>
+            <li>目の疲れが抜けず、首や肩まで張る感じがする</li>
+            <li>眠りが浅く、朝のすっきり感が少ない</li>
+            <li>休日は寝て終わり、整える時間が足りない</li>
+          </ul>
+          <p class="note">ドライヘッドスパは髪を濡らさずに受けられるため、仕事帰りの気分転換としても選ばれています。</p>
+        </div>
+        <div class="photo reveal" style="animation-delay: 0.15s;" role="img" aria-label="仕事帰りの来店イメージ"></div>
+      </div>
+    </section>
+
+    <section id="benefit" class="section">
+      <div class="container grid grid-2">
+        <div class="photo reveal" style="animation-delay: 0.1s;" role="img" aria-label="施術の手元イメージ"></div>
+        <div class="reveal" style="animation-delay: 0.2s;">
+          <span class="eyebrow">Feel the Change</span>
+          <h2>短時間でも、深く休めた感じを</h2>
+          <p>頭皮を丁寧にゆるめ、こわばりやすい側頭部・後頭部・首まわりまで心地よく整えていきます。施術後は、視界が明るく感じたり、頭が軽く感じたり、呼吸がしやすくなるように感じる方もいらっしゃいます。</p>
+          <p class="note">当店の施術はリラクゼーションを目的としております。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reasons" class="section alt">
+      <div class="container">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>上質さは、細部に宿ると考えています</h2>
+        <div class="grid grid-2">
+          <div class="card reveal" style="animation-delay: 0.05s;">
+            <h3>静かな個室設計</h3>
+            <p>余計な音や視線が入りにくい空間で、施術に集中できる環境を整えています。</p>
+          </div>
+          <div class="card reveal" style="animation-delay: 0.1s;">
+            <h3>最初に整える、カウンセリング</h3>
+            <p>その日の疲れの出方を伺い、触れる強さ・重点部位・施術配分を調整します。</p>
+          </div>
+          <div class="card reveal" style="animation-delay: 0.15s;">
+            <h3>清潔感と所作</h3>
+            <p>タオルや備品、手指衛生、動線まで含めて、安心して身を預けられる状態を保ちます。</p>
+          </div>
+          <div class="card reveal" style="animation-delay: 0.2s;">
+            <h3>仕事帰りに通いやすい運用</h3>
+            <p>施術後の身支度スペース、短時間メニュー、遅い時間の受付など、通いやすさを大切にしています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="container">
+        <span class="eyebrow">Menu</span>
+        <h2>メニュー</h2>
+        <div class="grid grid-3">
+          <div class="card menu-card reveal" style="animation-delay: 0.05s;">
+            <span class="tag">クイック（短時間で整える）</span>
+            <h3>◯◯分コース</h3>
+            <p>仕事帰りに、まずは一度。</p>
+            <p class="price">&#165;◯◯◯◯</p>
+          </div>
+          <div class="card menu-card reveal" style="animation-delay: 0.1s;">
+            <span class="tag">スタンダード（いちばん人気）</span>
+            <h3>◯◯分コース</h3>
+            <p>頭〜首まわりまでバランスよく。</p>
+            <p class="price">&#165;◯◯◯◯</p>
+          </div>
+          <div class="card menu-card reveal" style="animation-delay: 0.15s;">
+            <span class="tag">ディープ（しっかり休む）</span>
+            <h3>◯◯分コース</h3>
+            <p>より丁寧に受けたい日に。</p>
+            <p class="price">&#165;◯◯◯◯</p>
+          </div>
+        </div>
+        <p class="note">初めての方は、スタンダードから選ばれる方が多いです。迷われた場合は、ご来店後にご相談いただけます。</p>
+      </div>
+    </section>
+
+    <section id="flow-section" class="section alt">
+      <div class="container grid grid-2">
+        <div class="reveal" style="animation-delay: 0.05s;">
+          <span class="eyebrow">Flow</span>
+          <h2>施術の流れ</h2>
+          <div class="flow">
+            <div class="flow-step">
+              <h3>ご来店・カウンセリング</h3>
+              <p>当日の状態を確認し、力加減や重点部位を調整します。</p>
+            </div>
+            <div class="flow-step">
+              <h3>施術</h3>
+              <p>呼吸に合わせてゆっくりと頭皮をゆるめていきます。</p>
+            </div>
+            <div class="flow-step">
+              <h3>施術後</h3>
+              <p>状態の共有・お会計・身支度まで落ち着いてお過ごしください。</p>
+            </div>
+          </div>
+        </div>
+        <div class="photo reveal" style="animation-delay: 0.15s;" role="img" aria-label="施術の流れイメージ"></div>
+      </div>
+    </section>
+
+    <section id="voices" class="section">
+      <div class="container">
+        <span class="eyebrow">Voices</span>
+        <h2>お客様の声</h2>
+        <div class="grid grid-3">
+          <div class="card voice reveal" style="animation-delay: 0.05s;">
+            <h3>50代男性</h3>
+            <p>仕事終わりに寄れるのが助かります。静かな空間で、頭が休まる感じがありました。</p>
+          </div>
+          <div class="card voice reveal" style="animation-delay: 0.1s;">
+            <h3>40代女性</h3>
+            <p>目の疲れが強い日に選びました。施術後は気持ちがほどけて、よく眠れた気がします。</p>
+          </div>
+          <div class="card voice reveal" style="animation-delay: 0.15s;">
+            <h3>40代男性</h3>
+            <p>男性でも入りやすい雰囲気でした。強さの確認が丁寧で安心できました。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt">
+      <div class="container">
+        <span class="eyebrow">FAQ</span>
+        <h2>よくある質問</h2>
+        <details open>
+          <summary>髪は濡れますか</summary>
+          <p>濡らしません。整髪料が多い場合は、軽く整えてからご来店ください。</p>
+        </details>
+        <details>
+          <summary>着替えは必要ですか</summary>
+          <p>基本は不要です。首まわりが締まる服の場合は、ゆとりのある服装がおすすめです。</p>
+        </details>
+        <details>
+          <summary>男性も利用できますか</summary>
+          <p>はい。男女問わずご利用いただけます。</p>
+        </details>
+        <details>
+          <summary>当日予約はできますか</summary>
+          <p>空きがあれば可能です。Web予約で空き状況をご確認ください。</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="access" class="section">
+      <div class="container grid grid-2">
+        <div class="reveal" style="animation-delay: 0.05s;">
+          <span class="eyebrow">Access</span>
+          <h2>アクセス</h2>
+          <ul class="access-list">
+            <li>最寄り：◯◯駅から徒歩◯分</li>
+            <li>住所：埼玉県春日部市◯◯（差し替え）</li>
+            <li>営業時間：◯◯〜◯◯（最終受付◯◯）</li>
+            <li>お支払い：現金／クレジット／電子マネー（対応状況に合わせて）</li>
+          </ul>
+        </div>
+        <div class="photo reveal" style="animation-delay: 0.15s;" role="img" aria-label="地図のイメージ"></div>
+      </div>
+    </section>
+
+    <section id="cta" class="section alt cta-section">
+      <div class="container reveal" style="animation-delay: 0.05s;">
+        <span class="eyebrow">Reserve</span>
+        <h2 id="reserve">今日の疲れは、今日のうちに</h2>
+        <p>静かな個室で、頭から首まで丁寧に整える時間を。お仕事帰りにも無理なく通えるドライヘッドスパです。</p>
+        <div class="cta-row" style="justify-content: center;">
+          <a class="btn btn-primary" href="#reserve">空き状況を確認して予約する</a>
+          <a class="btn btn-secondary" href="tel:000-0000-0000">電話で予約する</a>
+        </div>
+        <p class="note">初回クーポンや限定メニューを設ける場合は、条件を明確にご案内ください。</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="cta-dock">
+    <a class="btn btn-primary" href="#reserve">空き状況を見てWeb予約</a>
+    <p class="note">当日予約も空きがあればご案内します</p>
+  </div>
+</body>
+</html>
