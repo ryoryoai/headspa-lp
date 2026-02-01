@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Head Spa LP Comparison - Gemini / Codex / Opus 4.5</title>
+  <title>Head Spa LP Comparison - Gemini 2.5 / Gemini 3 / Codex / Opus 4.5</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -114,14 +114,18 @@
     <div class="header">
       <div>
         <div class="header__title">Head Spa LP Comparison</div>
-        <div class="header__sub">Spring City Kasukabe - 3 AI Models</div>
+        <div class="header__sub">Spring City Kasukabe - 4 AI Models</div>
       </div>
     </div>
 
     <div class="tabs">
       <div class="tab active" data-target="gemini" onclick="switchTab(this)">
-        Gemini
+        Gemini 2.5
         <span class="tab__model">gemini-2.5-pro</span>
+      </div>
+      <div class="tab" data-target="gemini3" onclick="switchTab(this)">
+        Gemini 3
+        <span class="tab__model">gemini-3.0-pro-preview</span>
       </div>
       <div class="tab" data-target="codex" onclick="switchTab(this)">
         Codex
@@ -143,6 +147,7 @@
     <div class="frame-wrap">
       <div class="frame-container desktop" id="frameContainer">
         <iframe id="gemini" class="active" src="output/gemini.html" loading="lazy"></iframe>
+        <iframe id="gemini3" src="output/gemini3.html" loading="lazy"></iframe>
         <iframe id="codex" src="output/codex.html" loading="lazy"></iframe>
         <iframe id="opus" src="output/opus.html" loading="lazy"></iframe>
       </div>

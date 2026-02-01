@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上質なドライヘッドスパ | 春日部の完全予約制サロン</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a2a3a; /* 深みのあるネイビー */
+            --accent-color: #bfa15a;  /* 上品なゴールド */
+            --text-color: #333;
+            --bg-light: #f9f7f2;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Serif JP', serif;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(26, 42, 58, 0.6), rgba(26, 42, 58, 0.6)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .badge {
+            border: 1px solid var(--white);
+            padding: 5px 15px;
+            font-size: 0.85rem;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-sub {
+            background-color: rgba(255,255,255,0.2);
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        /* --- Pain Points --- */
+        .pain-section {
+            background-color: var(--bg-light);
+        }
+
+        .pain-list {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pain-list li {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .pain-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 10px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* --- Reasons --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        /* --- Menu Table --- */
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .menu-table th, .menu-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* --- Testimonials --- */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-item {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .user-tag {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        /* --- Sticky Footer CTA --- */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.5rem; }
+            .sticky-cta .btn { padding: 12px 20px; font-size: 0.9rem; }
+            section { padding: 50px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>仕事帰りの頭と目の重さに。<br>上質なドライヘッドスパを、春日部で</h1>
+            <p>静かな個室空間で受ける、完全予約制のヘッドケア。<br>男女問わず通いやすく、短時間でも深い休息を目指します。</p>
+
+            <div class="badge-container">
+                <span class="badge">完全予約制</span>
+                <span class="badge">個室完備</span>
+                <span class="badge">男女OK</span>
+                <span class="badge">最終受付20時</span>
+            </div>
+
+            <a href="#booking" class="btn btn-main">空き状況を見てWeb予約</a><br>
+            <a href="tel:0000000000" class="btn btn-sub">電話で予約する</a>
+            <p style="font-size: 0.8rem; margin-top: 15px;">当日予約も空きがあればご案内可能です</p>
+        </div>
+    </header>
+
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>このような状態で、帰宅していませんか</h2>
+            </div>
+            <ul class="pain-list">
+                <li>夕方になると頭が重く、思考がまとまりにくい</li>
+                <li>目の疲れが抜けず、首や肩まで張る感じがする</li>
+                <li>眠りが浅く、朝のすっきり感が少ない</li>
+                <li>休日は寝て終わり、整える時間が足りない</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>短時間でも、深く休めた体感を</h2>
+            </div>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto;">
+                頭皮を丁寧にゆるめ、こわばりやすい側頭部・後頭部・首まわりまで心地よく整えていきます。<br>
+                施術後は、視界が明るく感じたり、呼吸が深くしやすくなるような「本来の軽さ」へと導きます。
+            </p>
+        </div>
+    </section>
+
+    <section style="background-color: var(--primary-color); color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--white);">上質さは、細部に宿る</h2>
+            </div>
+            <div class="grid">
+                <div class="card" style="color: var(--text-color);">
+                    <h3>静かな個室設計</h3>
+                    <p>余計な音や視線が入りにくい空間で、自分だけの休息に没入できる環境を整えています。</p>
+                </div>
+                <div class="card" style="color: var(--text-color);">
+                    <h3>パーソナルな対応</h3>
+                    <p>その日の疲れの出方を伺い、触れる強さ・重点部位を調整。あなたに最適な施術を提供します。</p>
+                </div>
+                <div class="card" style="color: var(--text-color);">
+                    <h3>お着替え不要</h3>
+                    <p>髪を濡らさないため、お仕事帰りの服装のままお気軽にお立ち寄りいただけます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>メニュー</h2>
+            </div>
+            <table class="menu-table">
+                <tr>
+                    <td><strong>クイックコース</strong><br><small>仕事帰りに、まずは一度</small></td>
+                    <td>45分</td>
+                    <td class="price">&yen;6,600</td>
+                </tr>
+                <tr>
+                    <td><strong>スタンダードコース</strong><br><small>一番人気。頭から首までバランスよく</small></td>
+                    <td>60分</td>
+                    <td class="price">&yen;8,800</td>
+                </tr>
+                <tr>
+                    <td><strong>プレミアムディープ</strong><br><small>特に疲れが強い日の集中ケア</small></td>
+                    <td>90分</td>
+                    <td class="price">&yen;12,100</td>
+                </tr>
+            </table>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #666; text-align: center;">
+                ※初めての方は、スタンダードコースから選ばれる方が多いです。
+            </p>
+        </div>
+    </section>
+
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>お客様の声</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <span class="user-tag">50代 男性</span>
+                    <p>仕事帰りに寄れるのが助かります。静かな空間で、驚くほど頭が休まる感じがありました。</p>
+                </div>
+                <div class="testimonial-item">
+                    <span class="user-tag">40代 女性</span>
+                    <p>目の疲れが強い日に選びました。施術後は気持ちがほどけて、その夜はぐっすり眠れました。</p>
+                </div>
+                <div class="testimonial-item">
+                    <span class="user-tag">40代 男性</span>
+                    <p>男性でも入りやすい雰囲気でした。強さの確認が丁寧で、非常に安心感がありました。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="grid">
+                <div>
+                    <h3>よくある質問</h3>
+                    <p><strong>Q. 髪は濡れますか？</strong><br>A. 濡らしません。そのままお帰りいただけます。</p>
+                    <p><strong>Q. 当日予約はできますか？</strong><br>A. はい、空き状況をWebでご確認いただくか、お電話ください。</p>
+                </div>
+                <div>
+                    <h3>アクセス・営業時間</h3>
+                    <p>
+                        春日部駅から徒歩5分<br>
+                        埼玉県春日部市◯◯町1-2-3<br>
+                        営業時間：11:00〜21:00（最終受付20:00）<br>
+                        定休日：月曜日
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" style="background-color: var(--bg-light); text-align: center; padding-bottom: 120px;">
+        <div class="container">
+            <h2>今日、一日の疲れをリセットしませんか</h2>
+            <p>完全予約制のため、お待たせすることなくご案内いたします。</p>
+            <a href="#" class="btn btn-main">24時間Web予約・空き状況確認</a>
+        </div>
+    </section>
+
+    <div class="sticky-cta">
+        <a href="#" class="btn btn-main" style="margin: 0 5px; flex: 1; text-align: center;">Web予約</a>
+        <a href="tel:0000000000" class="btn btn-sub" style="margin: 0 5px; flex: 1; text-align: center; color: var(--primary-color); border-color: var(--primary-color);">電話予約</a>
+    </div>
+
+</body>
+</html>
